@@ -28,18 +28,32 @@ const deleteRestaurant = async (item) => {
     if (response) {
         results.value = results.value.filter((restaurant) => restaurant.id !== item.id)
     }
-}
+} 
 
 </script>
 
 <template>
-    <div>
-        <p class="text-2xl font-bold">Welcome user, on the home page</p>
-        <div class="flex flex-row gap-6" v-for="(item, index) in results" :key="item.index">
-            <div>{{ item.id }}</div>
-            <p>{{ item.name }}</p>
-            <NuxtLink :to="`/update/${item.id}`">Update</NuxtLink>
-            <button @click="deleteRestaurant(item)">Delete</button>
+    <div class="h-screen pl-6 ">
+        <div class="flex justify-center pt-10">
+            <p class="text-2xl font-bold">Welcome user, on the home page</p>
+        </div>
+        <div class="flex flex-col gap-6 mt-10 grid grid-cols-2">
+            <div class="flex flex-row justify-between items-center hover:shadow-lg transition duration-100 shadow-md px-3 py-4 w-lg bg-gray-200 rounded-md"
+                v-for="(item, index) in results" :key="item.index">
+                <div>
+                    <p class="text-lg font-semibold">{{ item.name }}</p>
+                </div>
+                <div class="flex flex-row gap-2 text-gray-700 text-sm">
+                    <p>{{ item.contact }}</p>
+                    <p>{{ item.address }}</p>
+                </div>
+                <div class="flex flex-row gap-2 items-center text-sm">
+                    <NuxtLink class="text-green-500 hover:text-green-400 transition duration-100"
+                        :to="`/update/${item.id}`">Update</NuxtLink>
+                    <button class="text-red-500 hover:text-red-400 transition duration-100"
+                        @click="deleteRestaurant(item)">Delete</button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
