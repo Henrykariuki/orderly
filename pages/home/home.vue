@@ -12,10 +12,9 @@ onNuxtReady(() => {
     
     const parsedUser = JSON.parse(user);
 
-    if (parsedUser.length > 0) {
-        name.value = parsedUser[0].name
+    if (parsedUser) {
+        name.value = parsedUser.name
     }
-
 });
 
 const { data: results } = await useFetch('http://localhost:3000/restaurant');
@@ -35,7 +34,7 @@ const deleteRestaurant = async (item) => {
 <template>
     <div class="h-screen pl-6 ">
         <div class="flex justify-center pt-10">
-            <p class="text-2xl font-bold">Welcome user, on the home page</p>
+            <p class="text-2xl font-bold">Welcome {{ name }}, on the home page</p>
         </div>
         <div class="flex flex-col gap-6 mt-10 grid grid-cols-2">
             <div class="flex flex-row justify-between items-center hover:shadow-lg transition duration-100 shadow-md px-3 py-4 w-lg bg-gray-200 rounded-md"
