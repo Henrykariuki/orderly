@@ -35,10 +35,10 @@ const logIn = async () => {
             <div class="flex items-center flex-col gap-4 ">
                 <input
                     class="border border-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 p-2 p-2 w-80 rounded-sm"
-                    type="email" v-model="email" placeholder="email">
+                    type="email" v-model="email" placeholder="Enter email">
                 <input
                     class="border border-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 p-2 p-2 w-80 rounded-sm"
-                    type="password" v-model="password" placeholder="password">
+                    type="password" v-model="password" placeholder="Enter password">
                 <button
                     class="hover:bg-black/70 border p-2 rounded-full bg-black w-80 text-white transition duration-100"
                     @click="logIn">

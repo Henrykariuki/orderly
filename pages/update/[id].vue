@@ -51,13 +51,13 @@ const addRestaurant = async () => {
             <form class="flex flex-col gap-2 max-w-md w-full px-3">
                 <input
                     class="border border-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 p-2 rounded-sm"
-                    type="text" placeholder="Name" v-model="name" />
+                    type="text" placeholder="Enter name" v-model="name" />
                 <input
                     class="border border-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 p-2 rounded-sm"
-                    type="text" placeholder="Address" v-model="address" />
+                    type="text" placeholder="Enter address" v-model="address" />
                 <input
                     class="border border-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 p-2 rounded-sm"
-                    type="text" placeholder="Contact" v-model="contact" />
+                    type="text" placeholder="Enter contact" v-model="contact" />
                 <button class="hover:text-cyan-500 transition duration-100 mt-4" @click="addRestaurant"
                     type="button">Update restaurant</button>
             </form>

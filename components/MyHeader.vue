@@ -9,7 +9,7 @@ const logOut = () => {
 
 <template>
     <div>
-        <div class="shadow-md bg-[#FAF9F6] flex justify-around py-4 text-lg font-semibold">
+        <header class="shadow-md bg-[#FAF9F6] flex justify-around py-4 text-lg font-semibold">
             <NuxtLink to="/home/home"
                 class="py-1 px-6 rounded-full hover:bg-black hover:text-white transition duration-100">
                 Home
@@ -21,7 +21,7 @@ const logOut = () => {
                 @click="logOut">
                 Logout
             </button>
-        </div>
+        </header>
     </div>
 </template>
 
