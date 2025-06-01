@@ -37,7 +37,7 @@ const deleteRestaurant = async (item) => {
             <p class="text-2xl font-bold">Welcome {{ name }}, on the home page</p>
         </div>
         <div class="flex flex-col gap-6 mt-10 grid grid-cols-1 lg:grid-cols-2">
-            <div class="flex flex-row justify-between items-center hover:shadow-lg transition duration-100 shadow-md px-3 py-4 md:w-lg bg-gray-200 rounded-md"
+            <div class="flex flex-row justify-between items-center cursor-pointer hover:shadow-lg transition duration-100 shadow-md px-3 py-4 md:w-lg bg-gray-200 rounded-md"
                 v-for="(item, index) in results" :key="item.index">
                 <div>
                     <p class="text-lg font-semibold">{{ item.name }}</p>

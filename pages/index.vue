@@ -1,4 +1,4 @@
-<script setup>
+<script setup >
 const email = ref("")
 const password = ref("")
 
@@ -15,6 +15,11 @@ onNuxtReady(() => {
 const logIn = async () => {
     const response = await $fetch(`http://localhost:3000/user?email=${email.value}&password=${password.value}`)
     
+    if (!email.value || !password.value) {
+        alert("Please fill in all fields before logging in.");
+        return;
+    } 
+
     if(response && response.length > 0) {
         localStorage.setItem('user-info', JSON.stringify(response[0]))
         router.push("/home/home");

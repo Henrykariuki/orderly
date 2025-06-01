@@ -11,6 +11,18 @@ const name = ref("")
 const address = ref("")
 const contact = ref("")
 
+const userName = ref("")
+
+onNuxtReady(() => {
+    const user = localStorage.getItem('user-info')
+    const parsedUser = JSON.parse(user)
+
+    if(parsedUser) {
+        userName.value = parsedUser.name
+    }
+})
+
+
 const { data } = await useFetch(`http://localhost:3000/restaurant/${id}`)
 
 if (data.value) {
@@ -45,7 +57,7 @@ const addRestaurant = async () => {
 <template>
     <div class="flex flex-col gap-10 pt-4">
         <div class="flex justify-center">
-            <p class="text-2xl font-bold">Welcome user, on the update page</p>
+            <p class="text-2xl font-bold">Welcome {{ userName }}, on the update page</p>
         </div>
         <div class="flex justify-center">
             <form class="flex flex-col gap-2 max-w-md w-full px-3">

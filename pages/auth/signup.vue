@@ -62,11 +62,15 @@ const signUp = async () => {
         <input
           class="border border-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 p-2 rounded-sm"
           type="password" v-model="password" placeholder="Enter Password" />
-        <button class="hover:bg-black/70 border p-2 rounded-full bg-black text-white transition duration-100"
+        <button class="hover:bg-black/70 border p-2 mb-2 rounded-full bg-black text-white transition duration-100"
           @click="signUp">
           Sign up
         </button>
       </div>
+      <NuxtLink to="/">
+        Already have an account? <span class="underline">Log in</span>
+      </NuxtLink>
     </div>
+
   </div>
 </template>

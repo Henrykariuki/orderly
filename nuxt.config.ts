@@ -14,4 +14,13 @@ export default defineNuxtConfig({
   devServer: {
     port: 4000, // Change the port number to your desired port
   },
+
+  app: {
+    head: {
+      title: 'Orderly',
+      meta: [
+        { name: 'description', content: 'Restaurant management application.' }
+      ]
+    }
+  }
 });
